@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="720.0" style="-fx-background-color: #2F4F4F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="martis.hastam.FXMLDocumentController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="260.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="68.0" fitWidth="322.0" layoutX="202.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@MartisHastamLogo.png" />
+         </image>
+      </ImageView>
+      <Line endX="360.0" layoutX="360.0" layoutY="250.0" startX="-360.0" />
+      <Line endY="250.0" layoutX="363.0" layoutY="250.0" />
+      <Button fx:id="encButt" layoutX="75.0" layoutY="310.0" mnemonicParsing="false" onAction="#loadEncFXML" prefHeight="124.0" prefWidth="207.0" style="-fx-border-color: #E3DEDB; -fx-background-color: #000000; -fx-border-radius: 20; -fx-background-radius: 20;" text="ENCRYPTION" textFill="#e3dedb" />
+      <Button fx:id="decButt" layoutX="444.5" layoutY="310.0" mnemonicParsing="false" onAction="#loadDecFXML" prefHeight="124.0" prefWidth="207.0" style="-fx-border-color: #E3DEDB; -fx-background-color: #000000; -fx-border-radius: 20; -fx-background-radius: 20;" text="DECRYPTION" textFill="#e3dedb" />
+   </children>
+</AnchorPane>
