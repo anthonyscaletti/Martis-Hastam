@@ -64,25 +64,40 @@ public class FXMLEncryptionController implements Initializable
         if (event.getSource() == encryptButt)
         {
             String result;
-            String path = jarPath.substring(0, jarPath.length() - 20);
-            String pathFinal = path.replace("%20", "\\ ");
+            String path;
+            String pathFinal;
+            
+            path = jarPath.substring(0, jarPath.length() - 20);
+            pathFinal = path.replace("%20", "\\ ");
             pathFinal = pathFinal + "/AESencrypt"; 
-            System.out.println(pathFinal);
             
             String program = pathFinal;
             String arg1 = encPath.getText();
             String arg2 = keyPath.getText();
             String arg3 = outPath.getText();
             
-            String command[] = {program, arg1, arg2, arg3};
+            if (arg1.length() == 0 || arg2.length() == 0 || arg3.length() == 0)
+            {
+                String command[] = {program};
+                resultField.clear();
             
-            resultField.clear();
+                SystemCallExecution call = new SystemCallExecution();
+                call.execute(command);
+
+                result = call.getList().get(0);
+                resultField.appendText(result);
+            }
+            else
+            {
+                String command[] = {program, arg1, arg2, arg3};
+                resultField.clear();
             
-            SystemCallExecution call = new SystemCallExecution();
-            call.execute(command);
-            
-            result = call.getList().get(0);
-            resultField.appendText(result);
+                SystemCallExecution call = new SystemCallExecution();
+                call.execute(command);
+
+                result = call.getList().get(0);
+                resultField.appendText(result);
+            }
         }
     }
     
