@@ -63,23 +63,40 @@ public class FXMLDecryptionController implements Initializable
         if (event.getSource() == decryptButt)
         {
             String result;
-            String path = jarPath.substring(0, jarPath.length() - 20);
-            String pathFinal = path.replace("%20", "\\ ");
-            pathFinal += "/AESdecrypt"; 
+            String path;
+            String pathFinal;
+            
+            path = jarPath.substring(0, jarPath.length() - 20);
+            pathFinal = path.replace("%20", "\\ ");
+            pathFinal = pathFinal + "/AESdecrypt"; 
             
             String program = pathFinal;
             String arg1 = decPath.getText();
             String arg2 = keyPath.getText();
             String arg3 = outPath.getText();
-            String command[] = {program, arg1, arg2, arg3};
             
-            resultField.clear();
+            if (arg1.length() == 0 || arg2.length() == 0 || arg3.length() == 0)
+            {
+                String command[] = {program};
+                resultField.clear();
             
-            SystemCallExecution call = new SystemCallExecution();
-            call.execute(command);
+                SystemCallExecution call = new SystemCallExecution();
+                call.execute(command);
+
+                result = call.getList().get(0);
+                resultField.appendText(result);
+            }
+            else
+            {
+                String command[] = {program, arg1, arg2, arg3};
+                resultField.clear();
             
-            result = call.getList().get(0);
-            resultField.appendText(result);
+                SystemCallExecution call = new SystemCallExecution();
+                call.execute(command);
+
+                result = call.getList().get(0);
+                resultField.appendText(result);
+            }
         }
     }
 
