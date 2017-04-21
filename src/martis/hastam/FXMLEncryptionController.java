@@ -15,7 +15,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import SCE.SystemCallExecution;
-import java.io.File;
 
 public class FXMLEncryptionController implements Initializable 
 {
