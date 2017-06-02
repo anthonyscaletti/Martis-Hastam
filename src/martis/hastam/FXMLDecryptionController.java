@@ -67,6 +67,8 @@ public class FXMLDecryptionController implements Initializable
             String pathFinal;
             //Creates readable path to the C++ decryption engine
             path = jarPath.substring(0, jarPath.length() - 20);
+            //Trying to let the program accept spaces in path, 
+            //currently fixing in another branch
             pathFinal = path.replace("%20", "\\ ");
             pathFinal = pathFinal + "/AESdecrypt"; 
             //Sets arguments to be ingested by the C++ decryption engine

@@ -67,6 +67,8 @@ public class FXMLEncryptionController implements Initializable
             String pathFinal;
             //Creates readable path to the C++ encryption engine
             path = jarPath.substring(0, jarPath.length() - 20);
+            //Trying to let the program accept spaces in path, 
+            //currently fixing in another branch
             pathFinal = path.replace("%20", "\\ ");
             pathFinal = pathFinal + "/AESencrypt"; 
             //Sets arguments to be ingested by the C++ encryption engine
