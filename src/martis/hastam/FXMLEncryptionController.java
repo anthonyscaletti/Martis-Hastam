@@ -54,6 +54,19 @@ public class FXMLEncryptionController implements Initializable
             }
         }
     }
+    //Connects UI with C++ engine
+    private void executeSysCall(String comm[])
+    {
+        String result;
+        //Clears the result field in the UI
+        resultField.clear();
+        //Execute C++ encryption engine
+        SystemCallExecution call = new SystemCallExecution();
+        call.execute(comm);
+        //Returns result from the C++ encryption engine
+        result = call.getList().get(0);
+        resultField.appendText(result);
+    }
     //Encrypts file
     @FXML
     private void encryptFile(ActionEvent event) throws IOException
@@ -62,7 +75,6 @@ public class FXMLEncryptionController implements Initializable
         
         if (event.getSource() == encryptButt)
         {
-            String result;
             String path;
             String pathFinal;
             //Creates readable path to the C++ encryption engine
@@ -80,24 +92,15 @@ public class FXMLEncryptionController implements Initializable
             if (arg1.length() == 0 || arg2.length() == 0 || arg3.length() == 0)
             {
                 String command[] = {program};
-                resultField.clear();
-            
-                SystemCallExecution call = new SystemCallExecution();
-                call.execute(command);
-
-                result = call.getList().get(0);
-                resultField.appendText(result);
+                //Execute system call
+                executeSysCall(command);
+                
             }
             else
             {
                 String command[] = {program, arg1, arg2, arg3};
-                resultField.clear();
-            
-                SystemCallExecution call = new SystemCallExecution();
-                call.execute(command);
-
-                result = call.getList().get(0);
-                resultField.appendText(result);
+                //Execute system call
+                executeSysCall(command);
             }
         }
     }
