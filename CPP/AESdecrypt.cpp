@@ -108,7 +108,7 @@ int main(int argc, char* argv[])
 	outFile = argv[3];
 
 	decryptDocument(cipherFile, keyFile, outFile);
-	cout << "Decryption Succesfull" << endl;
+	cout << "Decryption Succesful" << endl;
 
 	return SUCCESS;
 }

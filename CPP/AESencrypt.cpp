@@ -120,7 +120,7 @@ int main(int argc, char* argv[])
 	outFile = argv[3];
 	
 	encryptDocument(ptextFile, keyFile, outFile);
-	cout << "Encryption Succesfull" << endl;
+	cout << "Encryption Succesful" << endl;
 
 	return SUCCESS;
 }
