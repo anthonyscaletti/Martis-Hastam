@@ -1,3 +1,2 @@
 # Martis-Hastam
-A cryptographic application used to encrypt and decrypt documents using the GCM mode of the AES cipher. 
-UI written in Java while the core functionality is written in C++.
+A cryptographic application used to encrypt and decrypt documents including textfiles, pdf, images, audio, and video, using the GCM mode of the AES cipher. UI is written in Java while the core engine is written in C++.
