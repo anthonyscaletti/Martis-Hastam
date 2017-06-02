@@ -30,7 +30,7 @@ public class FXMLDecryptionController implements Initializable
     private TextField outPath;
     @FXML
     private TextField resultField;
-    
+    //Returns to main menu
     @FXML
     private void backToMain(ActionEvent event)
     {
@@ -54,7 +54,7 @@ public class FXMLDecryptionController implements Initializable
             }
         }
     }
-    
+    //Decrypts file
     @FXML
     private void decryptFile(ActionEvent event)
     {
@@ -65,16 +65,18 @@ public class FXMLDecryptionController implements Initializable
             String result;
             String path;
             String pathFinal;
-            
+            //Creates readable path to the C++ decryption engine
             path = jarPath.substring(0, jarPath.length() - 20);
+            //Trying to let the program accept spaces in path, 
+            //currently fixing in another branch
             pathFinal = path.replace("%20", "\\ ");
             pathFinal = pathFinal + "/AESdecrypt"; 
-            
+            //Sets arguments to be ingested by the C++ decryption engine
             String program = pathFinal;
             String arg1 = decPath.getText();
             String arg2 = keyPath.getText();
             String arg3 = outPath.getText();
-            
+            //Error checking user input
             if (arg1.length() == 0 || arg2.length() == 0 || arg3.length() == 0)
             {
                 String command[] = {program};

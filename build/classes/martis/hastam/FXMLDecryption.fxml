@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="720.0" style="-fx-background-color: #2F4F4F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="martis.hastam.FXMLDecryptionController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="68.0" fitWidth="200.0" layoutX="14.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@DecryptionLogo.png" />
+         </image>
+      </ImageView>
+      <Line endX="-140.0" layoutX="360.0" layoutY="210.0" startX="-360.0" />
+      <Line endY="290.0" layoutX="220.0" layoutY="210.0" startY="-210.0" />
+      <Button fx:id="backButt" layoutX="41.0" layoutY="252.0" mnemonicParsing="false" onAction="#backToMain" prefHeight="100.0" prefWidth="137.0" style="-fx-background-color: #000000; -fx-background-radius: 20; -fx-border-color: #E3DEDB; -fx-border-radius: 20;" text="BACK" textFill="#e3dedb" />
+      <Label layoutX="258.0" layoutY="79.0" text="Encrypted Document Path:" textFill="#e3dedb">
+         <font>
+            <Font name="Liberation Serif" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="decPath" layoutX="453.0" layoutY="77.0" prefHeight="25.0" prefWidth="250.0" />
+      <Label layoutX="342.0" layoutY="134.0" text="Keys File Path:" textFill="#e3dedb">
+         <font>
+            <Font name="Liberation Serif" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="keyPath" layoutX="453.0" layoutY="131.0" prefHeight="25.0" prefWidth="250.0" />
+      <Label layoutX="293.0" layoutY="188.0" text="Plaintext Output Path:" textFill="#e3dedb">
+         <font>
+            <Font name="Liberation Serif" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="outPath" layoutX="453.0" layoutY="185.0" prefHeight="25.0" prefWidth="250.0" />
+      <Button fx:id="decryptButt" layoutX="566.0" layoutY="252.0" mnemonicParsing="false" onAction="#decryptFile" prefHeight="100.0" prefWidth="137.0" style="-fx-background-color: #000000; -fx-background-radius: 20; -fx-border-color: #E3DEDB; -fx-border-radius: 20;" text="DECRYPT FILE" textFill="#e3dedb" />
+      <TextField fx:id="resultField" editable="false" layoutX="337.0" layoutY="290.0" prefHeight="25.0" prefWidth="221.0" />
+   </children>
+</AnchorPane>

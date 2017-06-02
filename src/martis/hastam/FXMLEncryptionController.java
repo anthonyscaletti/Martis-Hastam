@@ -30,7 +30,7 @@ public class FXMLEncryptionController implements Initializable
     private TextField outPath;
     @FXML
     private TextField resultField;
-    
+    //Returns to main menu
     @FXML
     private void backToMain(ActionEvent event)
     {
@@ -54,7 +54,7 @@ public class FXMLEncryptionController implements Initializable
             }
         }
     }
-    
+    //Encrypts file
     @FXML
     private void encryptFile(ActionEvent event) throws IOException
     {
@@ -65,16 +65,18 @@ public class FXMLEncryptionController implements Initializable
             String result;
             String path;
             String pathFinal;
-            
+            //Creates readable path to the C++ encryption engine
             path = jarPath.substring(0, jarPath.length() - 20);
+            //Trying to let the program accept spaces in path, 
+            //currently fixing in another branch
             pathFinal = path.replace("%20", "\\ ");
             pathFinal = pathFinal + "/AESencrypt"; 
-            
+            //Sets arguments to be ingested by the C++ encryption engine
             String program = pathFinal;
             String arg1 = encPath.getText();
             String arg2 = keyPath.getText();
             String arg3 = outPath.getText();
-            
+            //Error checking user input
             if (arg1.length() == 0 || arg2.length() == 0 || arg3.length() == 0)
             {
                 String command[] = {program};
@@ -99,7 +101,7 @@ public class FXMLEncryptionController implements Initializable
             }
         }
     }
-    
+  
     @Override
     public void initialize(URL url, ResourceBundle rb) {}    
     
