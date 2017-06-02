@@ -74,7 +74,7 @@ public class FXMLDecryptionController implements Initializable
             String arg1 = decPath.getText();
             String arg2 = keyPath.getText();
             String arg3 = outPath.getText();
-            
+            //Error checking user input
             if (arg1.length() == 0 || arg2.length() == 0 || arg3.length() == 0)
             {
                 String command[] = {program};
