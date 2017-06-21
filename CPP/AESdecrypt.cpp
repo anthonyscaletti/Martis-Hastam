@@ -76,7 +76,7 @@ void decryptDocument(string cfile, string keyFile, string outFile)
 	while (getline(file1, line))
 	{
 		getline(file2, keyIV);
-		//Seperate key from iv
+		//Separate key from iv
 		lockBox.iv = keyIV.substr(64, 130);
 		lockBox.key = keyIV.substr(0, 64);
 		//Decrypt line
